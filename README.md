@@ -40,7 +40,6 @@ GET /products → Fetch paginated products.
 PUT /products/:id.
 DELETE /products/:id → Delete a product.
 
-# FakeProductsFrontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
 
