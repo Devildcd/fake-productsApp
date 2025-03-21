@@ -19,6 +19,7 @@ import ShowProductComponent from '../show-product/show-product.component';
 import { AlertService } from '../../../../core/services/alert.service';
 import { PaginatorComponent } from '../../../shared/components/paginator/paginator.component';
 import { SearchService } from '../../../../core/services/search.service';
+import { LoaderComponent } from '../../../shared/components/loader/loader.component';
 
 @Component({
   selector: 'app-list-products',
@@ -35,6 +36,7 @@ import { SearchService } from '../../../../core/services/search.service';
     MatDialogModule,
     MatPaginatorModule,
     PaginatorComponent,
+    LoaderComponent
 ],
   templateUrl: './list-products.component.html',
   styleUrl: './list-products.component.css',

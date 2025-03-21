@@ -26,37 +26,41 @@
     [showFirstLastButtons]="showFirstLastButtons" [pageIndex]="pageIndex"
     (pageChange)="handlePageEvent($event)"></app-paginator>
 
-  <div class="product-container">
-    @for(product of paginatedProducts$ | async; track product) {
-    <mat-card class="product-card">
-      <div class="product-content">
-        <!-- image -->
-        <img [src]="product.imageUrl" [alt]="product.name" class="product-image" />
-
-        <!-- product info -->
-        <div class="product-info">
-          <div class="product-name-wrapper">
-            <a (click)="openProductDetailsDialog(product)" (keydown)="openProductDetailsDialog(product)" tabindex="0">
-              <h2 class="product-name">{{ product.name }}</h2>
-            </a>
-            <div class="price-checkbox-wrapper">
-              <p class="product-price">Price: ${{ product.price }}</p>
-              <mat-checkbox class="approval-checkbox" color="primary" [checked]="product.isApproved"
-                (change)="toggleApproval($event.checked, product)">Approved</mat-checkbox>
+    @if(!loading) {
+      <div class="product-container">
+        @for(product of paginatedProducts$ | async; track product) {
+        <mat-card class="product-card">
+          <div class="product-content">
+            <!-- image -->
+            <img [src]="product.imageUrl" [alt]="product.name" class="product-image" />
+    
+            <!-- product info -->
+            <div class="product-info">
+              <div class="product-name-wrapper">
+                <a (click)="openProductDetailsDialog(product)" (keydown)="openProductDetailsDialog(product)" tabindex="0">
+                  <h2 class="product-name">{{ product.name }}</h2>
+                </a>
+                <div class="price-checkbox-wrapper">
+                  <p class="product-price">Price: ${{ product.price }}</p>
+                  <mat-checkbox class="approval-checkbox" color="primary" [checked]="product.isApproved"
+                    (change)="toggleApproval($event.checked, product)">Approved</mat-checkbox>
+                </div>
+              </div>
+              <p class="product-description">{{ product.description }}</p>
             </div>
           </div>
-          <p class="product-description">{{ product.description }}</p>
-        </div>
+    
+          <mat-card-actions align="end">
+            <div class="actions-buttons">
+              <button (click)="openProductDetailsDialog(product)" mat-mini-fab
+                color="primary"><mat-icon>visibility</mat-icon></button>
+              <button mat-mini-fab class="delete-button" (click)="onDeleteProduct(product.id)" color="warn"><mat-icon>delete</mat-icon></button>
+            </div>
+          </mat-card-actions>
+        </mat-card>
+        }
       </div>
-
-      <mat-card-actions align="end">
-        <div class="actions-buttons">
-          <button (click)="openProductDetailsDialog(product)" mat-mini-fab
-            color="primary"><mat-icon>visibility</mat-icon></button>
-          <button mat-mini-fab class="delete-button" (click)="onDeleteProduct(product.id)" color="warn"><mat-icon>delete</mat-icon></button>
-        </div>
-      </mat-card-actions>
-    </mat-card>
+    }@else {
+      <app-loader></app-loader>
     }
-  </div>
 </app-main-card>

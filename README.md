@@ -31,8 +31,9 @@ Open in browser: http://localhost:4200
 This project uses mockapi.io for product data management.
 Example API endpoint:
 
-
-https://YOUR-MOCKAPI-ENDPOINT/products
+https://mockapi.io/clone/67da8a8535c87309f52cfb74
+https://mockapi.io/projects/67da8a8535c87309f52cfb74
+https://67da8a8535c87309f52cfb73.mockapi.io/api/products
 📌 Implemented HTTP Methods:
 
 GET /products → Fetch paginated products.
