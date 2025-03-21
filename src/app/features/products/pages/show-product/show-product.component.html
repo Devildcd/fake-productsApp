@@ -1,0 +1,20 @@
+<div class="product-card">
+  <div class="product-card-header">
+    <h2 class="product-title">{{ data.name }}</h2>
+    <p class="product-price">Price: {{ data.price }}</p>
+  </div>
+
+  <img class="product-image" [src]="data.imageUrl" alt="Product Image" />
+
+  <div class="product-description">
+    <p>{{ data.description }}</p>
+  </div>
+
+  <div class="product-actions">
+    <button class="action-button primary" (click)="addToCart()">
+      <mat-icon>shopping_cart</mat-icon>
+      Add to Cart
+    </button>
+  </div>
+</div>
+

@@ -1,0 +1,62 @@
+<app-main-card [title]="'Products'">
+  <div class="button-container">
+    <button class="left-button" mat mat-raised-button color="primary" [matMenuTriggerFor]="menu">
+      Filter
+      <mat-icon>filter_list</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="onFilterSelected('all')">
+        <mat-icon class="filter-icons">view_list</mat-icon>
+        <span>All</span>
+      </button>
+      <button mat-menu-item (click)="onFilterSelected('approved')">
+        <mat-icon class="filter-icons">thumb_up_alt</mat-icon>
+        <span>Approved</span>
+      </button>
+      <button mat-menu-item (click)="onFilterSelected('disapproved')">
+        <mat-icon class="filter-icons">thumb_down_alt</mat-icon>
+        <span>Disapproved</span>
+      </button>
+    </mat-menu>
+
+    <button mat-mini-fab class="right-button" color="primary"><mat-icon>add</mat-icon></button>
+  </div>
+
+  <app-paginator [totalItems]="totalProducts" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+    [showFirstLastButtons]="showFirstLastButtons" [pageIndex]="pageIndex"
+    (pageChange)="handlePageEvent($event)"></app-paginator>
+
+  <div class="product-container">
+    @for(product of paginatedProducts$ | async; track product) {
+    <mat-card class="product-card">
+      <div class="product-content">
+        <!-- image -->
+        <img [src]="product.imageUrl" [alt]="product.name" class="product-image" />
+
+        <!-- product info -->
+        <div class="product-info">
+          <div class="product-name-wrapper">
+            <a (click)="openProductDetailsDialog(product)" (keydown)="openProductDetailsDialog(product)" tabindex="0">
+              <h2 class="product-name">{{ product.name }}</h2>
+            </a>
+            <div class="price-checkbox-wrapper">
+              <p class="product-price">Price: ${{ product.price }}</p>
+              <mat-checkbox class="approval-checkbox" color="primary" [checked]="product.isApproved"
+                (change)="toggleApproval($event.checked, product)">Approved</mat-checkbox>
+            </div>
+          </div>
+          <p class="product-description">{{ product.description }}</p>
+        </div>
+      </div>
+
+      <mat-card-actions align="end">
+        <div class="actions-buttons">
+          <button (click)="openProductDetailsDialog(product)" mat-mini-fab
+            color="primary"><mat-icon>visibility</mat-icon></button>
+          <button mat-mini-fab class="delete-button" (click)="onDeleteProduct(product.id)" color="warn"><mat-icon>delete</mat-icon></button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+    }
+  </div>
+</app-main-card>

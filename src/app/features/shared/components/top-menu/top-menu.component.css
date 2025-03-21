@@ -1,0 +1,36 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  padding: 0 16px;
+  background-color: transparent;
+}
+
+.github-btn {
+  display: none;
+}
+
+.app-title {
+  font-size: 1.2rem;
+  color: #005cbb;
+}
+
+.spacer {
+  flex: 1;
+}
+
+
+
+button[mat-button]:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+button[mat-icon-button] mat-icon {
+  color: #005cbb;
+}
+
+@media (max-width: 968px) {
+  .github-btn {
+    display: inline-flex;
+  }
+}

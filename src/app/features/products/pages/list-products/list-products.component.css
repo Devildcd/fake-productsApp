@@ -1,0 +1,168 @@
+.product-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+.product-card {
+  width: 100%;
+  background-color: #dae2f9;
+  margin: 0 auto;
+  box-shadow: 2px 6px 8px rgba(73, 73, 73, 0.2);
+  border: 1px solid #dae2f9;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.product-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.product-name-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.product-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.product-info {
+  flex: 1;
+  max-width: calc(100% - 166px);
+  margin: 10px;
+}
+
+.product-name {
+  font-size: 1.5em;
+  margin: 0 0 8px 0;
+  word-wrap: break-word;
+  color: #005cbb;
+}
+
+.product-price {
+  font-size: 1.2em;
+  color: #ff4081;
+  margin: 0 0 8px 0;
+  margin-top: 10px;
+  word-wrap: break-word;
+}
+
+.product-description {
+  font-size: 1em;
+  color: #666;
+  margin: 0;
+  word-wrap: break-word;
+  white-space: normal;
+  text-align: justify;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  text-justify: inter-word;
+  word-spacing: -0.1px;
+  letter-spacing: -0.05px;
+}
+
+.price-checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.search-filter-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.filter-button {
+  margin-right: auto;
+  white-space: nowrap;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.left-button {
+  margin-right: auto;
+}
+
+.right-button {
+  margin-left: auto;
+}
+
+a {
+  cursor: pointer;
+}
+
+.actions-buttons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.delete-button {
+  background-color: #ff4081;
+}
+
+.filter-icons {
+  color: #3f51b5 !important;
+}
+
+
+@media (max-width: 600px) {
+  .product-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .product-name-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .product-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+  }
+  .product-info {
+    max-width: 100%;
+    text-align: center;
+  }
+  .product-name {
+    font-size: 1.2em;
+  }
+  .product-price {
+    font-size: 1em;
+  }
+  .product-description {
+    font-size: 0.9em;
+  }
+  .price-checkbox-wrapper {
+    gap: 8px;
+  }
+  .search-filter-container {
+    flex-direction: column;
+    gap: 8px;
+    align-items: start;
+  }
+  .filter-button {
+    margin-left: 0;
+  }
+}

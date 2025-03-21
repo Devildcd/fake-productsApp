@@ -1,0 +1,23 @@
+.custom-card {
+  box-shadow: none;
+  border-radius: 12px;
+  padding: 16px;
+  background-color: #eef0f5;
+}
+
+mat-card-title {
+  color: #005cbb;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+mat-card-actions {
+  margin-top: 12px;
+}
+
+
+@media (max-width: 768px) {
+  .custom-card {
+    padding: 0px;
+  }
+}

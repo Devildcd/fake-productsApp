@@ -1,0 +1,55 @@
+/* From Uiverse.io by vinodjangid07 */ 
+.InputContainer {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    padding-left: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+  }
+  
+  .input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 0.9em;
+    caret-color: #005cbb
+  }
+  
+  .searchIcon {
+    width: 16px;
+  }
+  
+  .border {
+    height: 40%;
+    width: 1.3px;
+    background-color: rgb(223, 223, 223);
+  }
+  
+  .micIcon {
+    width: 12px;
+  }
+  
+  .micButton {
+    padding: 0px 15px 0px 12px;
+    border: none;
+    background-color: transparent;
+    height: 40px;
+    cursor: pointer;
+    transition-duration: .3s;
+  }
+  
+  .searchIcon path {
+    fill: #005cbb
+  }
+  
+  
+  .micButton:hover {
+    background-color: #dae2f9;
+    transition-duration: .3s;
+  }

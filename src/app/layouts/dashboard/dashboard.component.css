@@ -1,0 +1,30 @@
+.main-content {
+  padding: 16px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+}
+
+.content {
+  flex-grow: 1;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+app-top-menu {
+  width: 100%;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+@media (max-width: 968px) {
+  .sidebar {
+    display: none;
+  }
+}
