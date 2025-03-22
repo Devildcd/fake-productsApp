@@ -1,15 +1,19 @@
 import { Component } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
 
+import { RouterModule } from '@angular/router';
+
+import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
+
 import { PdfService } from '../../../../core/services/pdf.service';
+
 
 @Component({
   selector: 'app-side-menu',
   standalone: true,
-  imports: [MatListModule, MatSidenavModule, MatIconModule, MatDividerModule],
+  imports: [MatListModule, MatSidenavModule, MatIconModule, MatDividerModule, RouterModule],
   templateUrl: './side-menu.component.html',
   styleUrl: './side-menu.component.css',
 })

@@ -7,12 +7,12 @@ export const routes: Routes = [
         pathMatch: 'full',
     },
     {
-        path: '',
+        path: 'products',
         loadComponent: () =>
             import('./layouts/dashboard/dashboard.component'),
         children: [
             {
-                path: 'products',
+                path: '',
                 loadChildren: () => import('./features/products/product.routes')
             },
         ],
